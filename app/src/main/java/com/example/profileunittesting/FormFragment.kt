@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
 import android.widget.Toast
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_main.view.*
@@ -25,16 +26,22 @@ class FormFragment : Fragment() {
     ): View? {
         // INFLATE THE LAYOUT FOR THIS FRAGMENT
         val view: View = inflater.inflate(R.layout.fragment_form, container, false)
-        val text = view.findViewById<EditText>(R.id.text)
+        val name = view.findViewById<EditText>(R.id.name)
+        val phone = view.findViewById<EditText>(R.id.phone)
+        val email = view.findViewById<EditText>(R.id.email)
+        val sex = view.findViewById<Spinner>(R.id.sex)
         val register = view.findViewById<Button>(R.id.register)
         register.setOnClickListener() {
 
             //GET FORM INFORMATION
             val bundle = Bundle()
-            bundle.putString("text", text.text.toString())
+            bundle.putString("name", name.text.toString())
+            bundle.putString("phone", phone.text.toString())
+            bundle.putString("email", email.text.toString())
+            bundle.putString("sex", sex.toString())
 
-//            Toast.makeText(this.context, text.text.toString(), Toast.LENGTH_SHORT).show()
-            //GET PROFILE FRAGMENT AND MOVE TO IT
+//            Toast.makeText(this.context, bundle.get("sex").toString(), Toast.LENGTH_SHORT).show()
+            //MOVE TO PROFILES FRAGMENT
             val profile = ProfileFragment()
             profile.arguments = bundle
             fragmentManager?.beginTransaction()?.apply {
@@ -43,7 +50,6 @@ class FormFragment : Fragment() {
                 addToBackStack(null)
             }
         }
-
         return view
     }
 }
