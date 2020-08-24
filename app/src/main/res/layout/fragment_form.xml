@@ -67,7 +67,10 @@
             android:layout_height="match_parent"
             android:background="@color/decagon_green_dark"
             android:hint="@string/name"
-            android:padding="10dp" />
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:maxLength="35"/>
     </androidx.cardview.widget.CardView>
 
     <!-- PHONE NUMBER FIELD -->
@@ -89,8 +92,11 @@
             android:layout_height="match_parent"
             android:background="@color/decagon_green_dark"
             android:hint="@string/phone_number"
+            android:textColor="@color/white"
+            android:textSize="20sp"
             android:padding="10dp"
-            android:inputType="phone"/>
+            android:inputType="phone"
+            android:maxLength="13"/>
     </androidx.cardview.widget.CardView>
 
     <!-- EMAIL FIELD -->
@@ -112,7 +118,10 @@
             android:layout_height="match_parent"
             android:background="@color/decagon_green_dark"
             android:hint="@string/email"
-            android:padding="10dp"/>
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:maxLength="35"/>
     </androidx.cardview.widget.CardView>
 
     <!-- SEX FIELD -->
@@ -134,7 +143,7 @@
             android:background="@color/decagon_green_dark"
             android:entries="@array/sex"
             android:popupBackground="@color/decagon_green_light"
-            android:paddingStart="50dp"/>
+            android:paddingStart="50dp" />
     </androidx.cardview.widget.CardView>
 
     <!-- REGISTER BUTTON -->
