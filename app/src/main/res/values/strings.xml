@@ -11,6 +11,7 @@
     <string name="email">EMAIL</string>
     <string name="sex">SEX</string>
     <string name="register">REGISTER</string>
+    <string name="profile">PROFILE</string>
 
     <string-array name="sex">
         <item>FEMALE</item>

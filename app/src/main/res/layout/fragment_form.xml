@@ -27,7 +27,7 @@
 
     </androidx.cardview.widget.CardView>
 
-    <!-- DECAGON IMAGE -->
+    <!-- COMPANY LOGO -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="200dp"
@@ -89,7 +89,8 @@
             android:layout_height="match_parent"
             android:background="@color/decagon_green_dark"
             android:hint="@string/phone_number"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:inputType="phone"/>
     </androidx.cardview.widget.CardView>
 
     <!-- EMAIL FIELD -->
