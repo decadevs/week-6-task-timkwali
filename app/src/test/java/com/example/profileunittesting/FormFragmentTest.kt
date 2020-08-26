@@ -7,7 +7,6 @@ import org.junit.Before
 import org.junit.Test
 
 class FormFragmentTest {
-
     //EMPTY STRING IS PASSED FOR PHONE NUMBER
     @Test
     fun validatePhone_noNumber_returnTrue() {

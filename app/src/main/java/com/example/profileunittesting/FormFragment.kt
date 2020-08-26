@@ -50,7 +50,7 @@ class FormFragment : Fragment() {
             if(!validateName()) {
                 Toast.makeText(this.context, "Please input a valid Name!", Toast.LENGTH_SHORT).show()
             } else if(!validatePhone(phoneNumber)) {
-                Toast.makeText(this.context, "Please input a valid Phone Number!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this.context, "Please input a valid Nigerian Phone Number!", Toast.LENGTH_SHORT).show()
             } else if(!validateEmail()) {
                 Toast.makeText(this.context, "Please input a valid email!", Toast.LENGTH_SHORT).show()
             } else if(!validateSex()) {
@@ -124,23 +124,13 @@ class FormFragment : Fragment() {
 
         //CHECK IF EMAIL IS VALID
         val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
-        return if(value.matches(emailPattern.toRegex()) ) {
-            true
-        } else {
-            val message = "Please enter a valid email address"
-//            Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
-            false
-        }
+        return value.matches(emailPattern.toRegex())
     }
 
     //VALIDATE SEX FIELD
     private fun validateSex(): Boolean {
         val value: String = sex.selectedItem.toString()
-        if(value == "SEX") {
-//            val message = "Please choose a Sex!"
-//            Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
-            return false
-        }
+        if(value == "Sex") return false
         return true
     }
 

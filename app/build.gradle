@@ -41,5 +41,8 @@ dependencies {
 
     //CARD VIEW
     implementation 'androidx.cardview:cardview:1.0.0'
+    //ESPRESSO
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
 }

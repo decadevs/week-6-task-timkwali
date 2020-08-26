@@ -36,10 +36,10 @@ class ProfileFragment : Fragment() {
         val sex = bundle?.get("sex")
 
         //SET PROFILE FIELDS
-        nameField.text = name.toString()
-        phoneField.text = phone.toString()
-        emailField.text = email.toString()
-        sexField.text = sex.toString()
+        nameField.text = "NAME:    " + name.toString()
+        phoneField.text = "PHONE:  " + phone.toString()
+        emailField.text = "EMAIL:    " + email.toString()
+        sexField.text = "SEX:        " + sex.toString()
 
         return view
     }

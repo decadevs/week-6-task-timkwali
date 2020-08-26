@@ -80,9 +80,7 @@
                     android:textColor="@color/black"
                     android:layout_weight="10"
                     android:paddingTop="3dp"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:textAllCaps="true"/>
+                    android:layout_marginStart="-10dp"/>
             </LinearLayout>
             <!-- PHONE FIELD -->
             <LinearLayout
@@ -103,10 +101,8 @@
                     android:textSize="20sp"
                     android:textColor="@color/black"
                     android:layout_weight="10"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:paddingTop="3dp"
-                    android:textAllCaps="true"/>
+                    android:layout_marginStart="-10dp"
+                    android:paddingTop="3dp"/>
             </LinearLayout>
             <!-- EMAIL FIELD -->
             <LinearLayout
@@ -127,10 +123,8 @@
                     android:textSize="20sp"
                     android:textColor="@color/black"
                     android:layout_weight="10"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:paddingTop="3dp"
-                    android:textAllCaps="true"/>
+                    android:layout_marginStart="-10dp"
+                    android:paddingTop="3dp"/>
             </LinearLayout>
             <!-- SEX FIELD -->
             <LinearLayout
@@ -151,10 +145,8 @@
                     android:textSize="20sp"
                     android:textColor="@color/black"
                     android:layout_weight="10"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:paddingTop="3dp"
-                    android:textAllCaps="true"/>
+                    android:layout_marginStart="-10dp"
+                    android:paddingTop="3dp"/>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
