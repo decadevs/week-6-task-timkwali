@@ -1,5 +1,6 @@
 package com.example.profileunittesting
 
+import org.junit.Assert.*
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onData
@@ -21,46 +22,26 @@ import java.util.EnumSet.allOf
 
 
 @RunWith(AndroidJUnit4ClassRunner::class)
-class FormFragmentUITest {
+class ProfileFragmentUITest {
     //LAUNCH ACTIVITY
     @get: Rule
     val activityRule = ActivityScenarioRule(MainActivity::class.java)
 
-    @Test
     fun test_areFormFieldsVisible() {
         //LAUNCH FRAGMENT
-        val form = launchFragmentInContainer<FormFragment>()
+        val form = launchFragmentInContainer<ProfileFragment>()
 
         //CHECK NAME FIELD
-        Espresso.onView(ViewMatchers.withId(R.id.name))
+        Espresso.onView(ViewMatchers.withId(R.id.name_field))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
         //CHECK PHONE FIELD
-        Espresso.onView(ViewMatchers.withId(R.id.phone))
+        Espresso.onView(ViewMatchers.withId(R.id.phone_field))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
         //CHECK EMAIL FIELD
-        Espresso.onView(ViewMatchers.withId(R.id.email))
+        Espresso.onView(ViewMatchers.withId(R.id.email_field))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
         //CHECK SEX FIELD
-        Espresso.onView(ViewMatchers.withId(R.id.sex))
+        Espresso.onView(ViewMatchers.withId(R.id.sex_field))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
-        //CHECK REGISTER BUTTON
-        Espresso.onView(ViewMatchers.withId(R.id.register))
-            .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
-    }
-
-    @Test
-    fun test_goToProfileFragment_whenButtonClicked() {
-        //LOAD FORM FRAGMENT
-        val form = launchFragmentInContainer<FormFragment>()
-        //SET FIELDS
-        onView((withId(R.id.name))).perform(typeText("John Doe"))
-        onView((withId(R.id.phone))).perform(typeText("08012345678"))
-        onView((withId(R.id.email))).perform(typeText("example@email.com"))
-        onView((withId(R.id.sex))).perform(click())
-        onView(withText("Male")).perform(click());
-        //CLICK REGISTER BUTTON
-        onView(withId(R.id.register)).perform(click())
-        //VERIFY PROFILE FRAGMENT IS SHOWN
-        onView(withId(R.id.profile_fragment)).check(matches(isDisplayed()))
     }
 }
