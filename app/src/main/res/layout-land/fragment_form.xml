@@ -15,7 +15,7 @@
 
         <!-- TOP SECTION -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
+            android:id="@+id/top_section"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/cardView">
+            app:layout_constraintTop_toTopOf="@+id/top_section">
 
             <ImageView
                 android:layout_width="match_parent"

@@ -26,6 +26,7 @@ class FormFragment : Fragment() {
     lateinit var phone: EditText
     lateinit var email: EditText
     lateinit var sex: Spinner
+    lateinit var phoneNumber: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,15 +40,26 @@ class FormFragment : Fragment() {
         phone = view.findViewById<EditText>(R.id.phone)
         email = view.findViewById<EditText>(R.id.email)
         sex = view.findViewById<Spinner>(R.id.sex)
+
         val register = view.findViewById<Button>(R.id.register)
         register.setOnClickListener() {
 
-            //VALIDATE FORM
-//            validateName()
-//            validatePhone()
-//            validateEmail()
+             phoneNumber = phone.text.toString().trim()
 
-            if(validateName() && validatePhone() && validateEmail()) {
+            //TOAST MESSAGES
+            if(!validateName()) {
+                Toast.makeText(this.context, "Please input a valid Name!", Toast.LENGTH_SHORT).show()
+            } else if(!validatePhone(phoneNumber)) {
+                Toast.makeText(this.context, "Please input a valid Phone Number!", Toast.LENGTH_SHORT).show()
+            } else if(!validateEmail()) {
+                Toast.makeText(this.context, "Please input a valid email!", Toast.LENGTH_SHORT).show()
+            } else if(!validateSex()) {
+                Toast.makeText(this.context, "Please choose a sex!", Toast.LENGTH_SHORT).show()
+            }
+
+            //VALIDATE FORM
+            if(validateName() && validatePhone(phoneNumber) && validateEmail() && validateSex()) {
+
                 //SAVE FORM INFO IN BUNDLE
                 val bundle = Bundle()
                 bundle.putString("name", name.text.toString())
@@ -71,62 +83,42 @@ class FormFragment : Fragment() {
     //FORM VALIDATIONS
     //VALIDATE NAME FIELD
     private fun validateName(): Boolean {
-
         val value: String = name.text.toString().trim()
         val name = "Name"
+
         //CHECK IF FIELD IS EMPTY
         if(checkIfEmpty(value, name)) return false
 
         //CHECK IF NAME IS TOO SHORT
-        if(value.length < 3) {
-            val message = "Name is too short!"
-            Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
-            return false
-        }
+        if(value.length < 3) return false
+
         //CHECK IF NAME START WITH NUMBER
-        if(value[0].isDigit()) {
-            val message = "Name cannot start with a digit!"
-            Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
-            return false
-        }
+        if(value[0].isDigit()) return false
         return true
     }
 
     //VALIDATE PHONE FIELD
-    private fun validatePhone(): Boolean {
-
-        val value: String = phone.text.toString().trim()
+    fun validatePhone(value: String): Boolean {
         val name = "Phone Number"
         var message = ""
+
         //CHECK IF FIELD IS EMPTY
         if(checkIfEmpty(value, name)) return false
 
         //CHECK IF NUMBER IS NIGERIAN
         if(value[0] == '0') {
-            if (value.length != 11) {
-                message = "Phone number should be 11 digits!"
-                Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
-                return false
-            }
+            if (value.length != 11) return false
         } else if(value[0] == '2') {
-            if(value.length != 13) {
-                message = "Phone Number should be 13 digits!"
-                Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
-                return false
-            }
-        } else {
-            message = "Please input a valid Nigerian number!"
-            Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
-            return false
-        }
+            if(value.length != 13) return false
+        } else return false
         return true
     }
 
     //VALIDATE EMAIL FIELD
     private fun validateEmail(): Boolean {
-
         val value: String = email.text.toString().trim()
         val name = "Email"
+
         //CHECK IF FIELD IS EMPTY
         if(checkIfEmpty(value, name)) return false
 
@@ -136,16 +128,28 @@ class FormFragment : Fragment() {
             true
         } else {
             val message = "Please enter a valid email address"
-            Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
             false
         }
     }
 
+    //VALIDATE SEX FIELD
+    private fun validateSex(): Boolean {
+        val value: String = sex.selectedItem.toString()
+        if(value == "SEX") {
+//            val message = "Please choose a Sex!"
+//            Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
+            return false
+        }
+        return true
+    }
+
     //CHECK IF FIELD IS EMPTY
-    private fun checkIfEmpty(str: String, name: String): Boolean {
-        if(str.isEmpty())  {
-            val message = "$name cannot be empty!"
-            Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
+    fun checkIfEmpty(str: String, name: String): Boolean {
+        val num = str.trim()
+        if(num.isEmpty())  {
+//            val message = "$name cannot be empty!"
+//            Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
             return true
         }
         return false

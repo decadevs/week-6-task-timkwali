@@ -7,25 +7,26 @@
     tools:context=".FormFragment">
 
     <!-- TOP SECTION -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    <View
+        android:id="@+id/top_section"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:background="@drawable/shape"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/decagon_green_light"
-            android:gravity="center"
-            android:text="@string/welcome"
-            android:textColor="@color/black"
-            android:textSize="30sp" />
-
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/top_section"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/top_section" />
 
     <!-- COMPANY LOGO -->
     <androidx.cardview.widget.CardView
@@ -38,8 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cardView">
-
+        app:layout_constraintTop_toTopOf="@+id/top_section">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -67,10 +67,10 @@
             android:layout_height="match_parent"
             android:background="@color/decagon_green_dark"
             android:hint="@string/name"
-            android:textColor="@color/white"
-            android:textSize="20sp"
+            android:maxLength="35"
             android:padding="10dp"
-            android:maxLength="35"/>
+            android:textColor="@color/white"
+            android:textSize="20sp" />
     </androidx.cardview.widget.CardView>
 
     <!-- PHONE NUMBER FIELD -->
@@ -92,11 +92,11 @@
             android:layout_height="match_parent"
             android:background="@color/decagon_green_dark"
             android:hint="@string/phone_number"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:padding="10dp"
             android:inputType="phone"
-            android:maxLength="13"/>
+            android:maxLength="13"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
     </androidx.cardview.widget.CardView>
 
     <!-- EMAIL FIELD -->
@@ -118,10 +118,10 @@
             android:layout_height="match_parent"
             android:background="@color/decagon_green_dark"
             android:hint="@string/email"
-            android:textColor="@color/white"
-            android:textSize="20sp"
+            android:maxLength="35"
             android:padding="10dp"
-            android:maxLength="35"/>
+            android:textColor="@color/white"
+            android:textSize="20sp" />
     </androidx.cardview.widget.CardView>
 
     <!-- SEX FIELD -->
@@ -143,7 +143,7 @@
             android:background="@color/decagon_green_dark"
             android:entries="@array/sex"
             android:popupBackground="@color/decagon_green_light"
-            android:paddingStart="50dp" />
+            android:textAlignment="center" />
     </androidx.cardview.widget.CardView>
 
     <!-- REGISTER BUTTON -->
@@ -151,10 +151,10 @@
         android:id="@+id/register"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/custom_button"
+        android:padding="5dp"
         android:text="@string/register"
         android:textSize="20sp"
-        android:padding="5dp"
-        android:background="@drawable/custom_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

@@ -27,6 +27,7 @@ class ProfileFragment : Fragment() {
         val emailField = view.findViewById<TextView>(R.id.email_field)
         val sexField = view.findViewById<TextView>(R.id.sex_field)
 
+
         //GET FORM INFO
         val bundle = this.arguments
         val name = bundle?.get("name")

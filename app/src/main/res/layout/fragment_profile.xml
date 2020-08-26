@@ -68,8 +68,8 @@
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp">
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_weight="1"
                     android:src="@drawable/ic_person"/>
                 <TextView
@@ -79,7 +79,9 @@
                     android:textSize="20sp"
                     android:textColor="@color/black"
                     android:layout_weight="10"
-                    android:paddingTop="12dp"
+                    android:paddingTop="3dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
                     android:textAllCaps="true"/>
             </LinearLayout>
             <!-- PHONE FIELD -->
@@ -90,8 +92,8 @@
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp">
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_weight="1"
                     android:src="@drawable/ic_phone"/>
                 <TextView
@@ -101,7 +103,9 @@
                     android:textSize="20sp"
                     android:textColor="@color/black"
                     android:layout_weight="10"
-                    android:paddingTop="12dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="3dp"
                     android:textAllCaps="true"/>
             </LinearLayout>
             <!-- EMAIL FIELD -->
@@ -112,8 +116,8 @@
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp">
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_weight="1"
                     android:src="@drawable/ic_email"/>
                 <TextView
@@ -123,7 +127,9 @@
                     android:textSize="20sp"
                     android:textColor="@color/black"
                     android:layout_weight="10"
-                    android:paddingTop="12dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="3dp"
                     android:textAllCaps="true"/>
             </LinearLayout>
             <!-- SEX FIELD -->
@@ -134,8 +140,8 @@
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp">
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_weight="1"
                     android:src="@drawable/gender"/>
                 <TextView
@@ -145,11 +151,11 @@
                     android:textSize="20sp"
                     android:textColor="@color/black"
                     android:layout_weight="10"
-                    android:paddingTop="12dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="3dp"
                     android:textAllCaps="true"/>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
