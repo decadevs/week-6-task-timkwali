@@ -106,9 +106,9 @@ class FormFragment : Fragment() {
         if(checkIfEmpty(value, name)) return false
 
         //CHECK IF NUMBER IS NIGERIAN
-        if(value[0] == '0') {
+        if(value.startsWith("07") || value.startsWith("08") || value.startsWith("09")) {
             if (value.length != 11) return false
-        } else if(value[0] == '2') {
+        } else if(value.startsWith("234")) {
             if(value.length != 13) return false
         } else return false
         return true

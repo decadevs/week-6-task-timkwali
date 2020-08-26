@@ -26,6 +26,10 @@ android {
     testOptions {
         unitTests.returnDefaultValues = true
     }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
@@ -44,5 +48,8 @@ dependencies {
     //ESPRESSO
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //FRAGMENTS
+    def fragment_version = "1.2.5"
+    debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
 
 }
